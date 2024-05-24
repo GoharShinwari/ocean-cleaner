@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Cleanup Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1>Ocean Cleanup Clicker</h1>
+        <p>Did you know? There are an estimated <b>171 trillion</b> pieces of plastic polluting the ocean's surface...</p>
+        <p>It's time to take action! Your mission: Remove every last one of them!</p>      
+        <div class="name-submission"><input type="text" placeholder="Enter Username"></div>
+        <div class="button"><button onclick="startGame()">Start Cleaning!</button></div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="github">Github Link!</div>
+        <div class="text">Created by Gohar!</div>
+    </div>
+
+    <!-- Include Particles.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles loaded...');
+        });
+    </script>
+</body>
+</html>
