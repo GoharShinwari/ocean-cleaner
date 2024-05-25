@@ -10,6 +10,10 @@ body {
     padding: 0; 
 }
 
+.upgrade-button, .shop-button {
+    display: none;
+}
+
 #particles-js {
     position: fixed;
     width: 100%;
