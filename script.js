@@ -4,7 +4,7 @@ function startGame() {
 
     if (username) {
         localStorage.setItem('username', username); 
-        window.location.href = './game/game.html'; 
+        window.location.href = 'game.html'; 
     } else {
         alert('Please enter a username.'); 
     }
