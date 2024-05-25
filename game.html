@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Cleaner</title>
+    <link rel="stylesheet" href="game/game.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div id="game-container">
+        <div id="main-content">
+            <h1>Ocean Cleaner</h1>
+            <div id="ocean">
+                <button id="clean-button">Clean!</button>
+            </div>        
+            <div id="stats">
+                <p>Clean Points: <span id="clean-points">0</span></p>
+                <p>Per second: <span id="per-second">0</span></p>
+            </div>
+            <div id="upgrades">
+                <h2>Upgrades</h2>
+                <button class="upgrade-button" data-upgrade-id="upgrade1" data-base-cost="15" data-multiplier="1.15" base-cps="0.1" data-purchased="0">Tidal Tidy-Up Tool (Cost: 15 CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade2" data-base-cost="100" data-multiplier="1.15" base-cps="1" data-purchased="0">Seabreeze Scrubber Kit (Cost: 100 CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade3" data-base-cost="1100" data-multiplier="1.15" base-cps="8" data-purchased="0">Coral Cove Cleaner (Cost: 1,100 CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade4" data-base-cost="12000" data-multiplier="1.15" base-cps="47" data-purchased="0">Dolphin-Powered Debris Detector (Cost: 12,000 CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade5" data-base-cost="130000" data-multiplier="1.15" base-cps="260" data-purchased="0">Whale Whisperer Waders (Cost: 130,000 CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade6" data-base-cost="1400000" data-multiplier="1.15" base-cps="1400" data-purchased="0">Sunken Treasure Tracker (Cost: 1.4M CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade7" data-base-cost="20000000" data-multiplier="1.15" base-cps="7800" data-purchased="0">Seashell Sorting System (Cost: 20M CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade8" data-base-cost="330000000" data-multiplier="1.15" base-cps="44000" data-purchased="0">AI-Powered Ocean Cleanup Network (Cost: 330M CP) (Owned: 0)</button>
+                <button class="upgrade-button" data-upgrade-id="upgrade9" data-base-cost="5100000000" data-multiplier="1.15" base-cps="260000" data-purchased="0">Virtual Reality Ocean Cleanup Simulator (Cost: 5.1B CP) (Owned: 0)</button>
+            </div>
+        </div>
+        <div class="store">
+            <h2>Store</h2>
+            <!---Cursor Upgrades-->
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="100" data-multiplier="2" data-bought="false">Cursor Upgrade 1 (Cost: 100 CP) (2x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="500" data-multiplier="4" data-bought="false">Cursor Upgrade 2 (Cost: 500 CP) (4x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="10000" data-multiplier="4" data-bought="false">Cursor Upgrade 3 (Cost: 10,000 CP) (4x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="100000" data-multiplier="4" data-bought="false">Cursor Upgrade 4 (Cost: 100,000 CP) (4x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="10000000" data-multiplier="6" data-bought="false">Cursor Upgrade 5 (Cost: 10,000,000 CP) (6x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="100000000" data-multiplier="6" data-bought="false">Cursor Upgrade 6 (Cost: 100,000,000 CP) (6x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="1000000000" data-multiplier="6" data-bought="false">Cursor Upgrade 7 (Cost: 1,000,000,000 CP) (6x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="10000000000" data-multiplier="8" data-bought="false">Cursor Upgrade 8 (Cost: 10,000,000,000 CP) (8x Clicking!)</button>
+            <button class="shop-button" onclick="purchaseCursor(this)" data-base-cost="1000000000000" data-multiplier="8" data-bought="false">Cursor Upgrade 9 (Cost: 1,000,000,000,000 CP) (8x Clicking!)</button>
+            
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles loaded...');
+        });
+    </script>
+    <script src="game/game.js"></script>
+</body>
+</html>

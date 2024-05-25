@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: #1976d2;
+    color: whitesmoke;
+    font-size: 2.2vh;
+    margin: 0; 
+    padding: 0; 
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#game-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.store {
+    width: 300px;
+    padding: 20px;
+}
+
+#ocean {
+    margin-top: 20px;
+}
+
+#upgrades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.shop-button,
+.upgrade-button,
+#clean-button {
+    font-size: 1.7vh;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: white;
+    padding: .6vh 1.5vh; 
+    margin: .4vh;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px; 
+}
+
+.shop-button,
+.upgrade-button {
+    background-color: #8B4513;
+}
+
+.shop-button:hover,
+.upgrade-button:hover {
+    background-color: #66330e; 
+}
+
+#clean-button {
+    background-color: #388e3c;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    border: 2px solid;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#clean-button:hover {
+    background-color: #2e7130; 
+}
+
+
+#stats {
+    margin-top: 20px;
+}
+
+#clean-points, #per-second {
+    font-weight: bold;
+}
