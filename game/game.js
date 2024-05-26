@@ -54,11 +54,26 @@ function purchaseCursor(button) {
     }
 }
 
-
-// code this so when upgrades are bought, they only effect their specific cps building.
-// 2x for tidal wave will only effect tidal and nothing else
 function purchaseBetterUpgrades(button) {
-    
+    const upgradeID = button.getAttribute('data-upgrade-id');
+    let ID;
+
+    if (upgradeID.includes('Upgrade')) {
+        ID = upgradeID.substring(0, upgradeID.indexOf('Upgrade'));
+    } else {
+        ID = upgradeID;
+    }
+
+    const OGButton = document.querySelector(`[data-upgrade-id="${ID}"]`);
+    if (OGButton) {
+        let baseCPS = parseFloat(OGButton.getAttribute('data-base-cps'));
+        baseCPS *= 2;
+        OGButton.setAttribute('data-base-cps', baseCPS);
+        console.log(baseCPS);
+        console.log(ID);
+    } else {
+        console.log(`Element with data-upgrade-id="${ID}" not found.`);
+    }
 }
 
 function checkShopVisibility() {
