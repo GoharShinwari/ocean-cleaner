@@ -111,7 +111,7 @@ function startCPS() {
     cpsInterval = setInterval(() => {
         let totalCPS = 0;
         upgradeButtons.forEach(button => {
-            const baseCPS = parseFloat(button.getAttribute('base-cps'));
+            const baseCPS = parseFloat(button.getAttribute('data-base-cps'));
             const purchased = parseInt(button.getAttribute('data-purchased'));
             totalCPS += baseCPS * purchased;
         });
