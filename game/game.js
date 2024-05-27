@@ -168,7 +168,7 @@ function loadData() {
 
     cleanPoints = parseFloat(localStorage.getItem('cleanPoints')) || 0;
     perSecond = parseFloat(localStorage.getItem('perSecond')) || 0;
-    cleanPointsPerClick = parseFloat(localStorage.getItem('cleanPointsPerClick')) || 1000;
+    cleanPointsPerClick = parseFloat(localStorage.getItem('cleanPointsPerClick')) || 1;
 
     console.log("cleanPoints:", cleanPoints);
     console.log("perSecond:", perSecond);
