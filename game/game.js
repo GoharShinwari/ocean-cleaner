@@ -39,12 +39,12 @@ function purchaseUpgrade(button) {
 
 function purchaseCursor(button) {
     const baseCost = parseInt(button.getAttribute('data-base-cost'));
-    const multiplier = parseInt(button.getAttribute('data-multiplier'));
+    const multiplier = parseFloat(button.getAttribute('data-multiplier'));
     const purchaseId = button.getAttribute('data-upgrade-id');
 
     if (cleanPoints >= baseCost) {
         cleanPoints -= baseCost;
-        cleanPointsPerClick *= multiplier;
+        cleanPointsPerClick *= multiplier; // Ensure the multiplier is correct and intended
 
         localStorage.setItem(purchaseId, 'true');
         button.style.display = 'none';
@@ -67,7 +67,7 @@ function purchaseBetterUpgrades(button) {
     const OGButton = document.querySelector(`[data-upgrade-id="${ID}"]`);
     if (OGButton) {
         let baseCPS = parseFloat(OGButton.getAttribute('data-base-cps'));
-        baseCPS *= 2;
+        baseCPS *= 2; // Double the base CPS of the original upgrade
         OGButton.setAttribute('data-base-cps', baseCPS);
         console.log(baseCPS);
         console.log(ID);
