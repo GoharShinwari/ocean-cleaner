@@ -1,4 +1,4 @@
-let cleanPointsPerClick = 1;
+let cleanPointsPerClick = parseFloat(localStorage.getItem('cleanPointsPerClick')) || 1;
 let cpsInterval;
 let cleanPoints = parseFloat(localStorage.getItem('cleanPoints')) || 0;
 let perSecond = parseFloat(localStorage.getItem('perSecond')) || 0;
@@ -141,9 +141,14 @@ function startCPS() {
 }
 
 function saveData() {
+    console.log("Saving data...");
+    console.log("cleanPoints:", cleanPoints);
+    console.log("perSecond:", perSecond);
+    console.log("cleanPointsPerClick:", cleanPointsPerClick);
+
     localStorage.setItem('cleanPoints', cleanPoints.toFixed(2));
     localStorage.setItem('perSecond', perSecond.toFixed(2));
-    localStorage.setItem('cleanPointsPerClick', cleanPointsPerClick);
+    localStorage.setItem('cleanPointsPerClick', cleanPointsPerClick.toFixed(2));
 
     upgradeButtons.forEach(button => {
         const upgradeId = button.getAttribute('data-upgrade-id');
@@ -159,9 +164,15 @@ function saveData() {
 }
 
 function loadData() {
+    console.log("Loading data...");
+
     cleanPoints = parseFloat(localStorage.getItem('cleanPoints')) || 0;
     perSecond = parseFloat(localStorage.getItem('perSecond')) || 0;
-    cleanPointsPerClick = parseFloat(localStorage.getItem('cleanPointsPerClick')) || 1;
+    cleanPointsPerClick = parseFloat(localStorage.getItem('cleanPointsPerClick')) || 1000;
+
+    console.log("cleanPoints:", cleanPoints);
+    console.log("perSecond:", perSecond);
+    console.log("cleanPointsPerClick:", cleanPointsPerClick);
 
     cleanPointsDisplay.textContent = cleanPoints.toLocaleString(undefined, { maximumFractionDigits: 2 });
     perSecondDisplay.textContent = perSecond.toLocaleString(undefined, { maximumFractionDigits: 2 });
