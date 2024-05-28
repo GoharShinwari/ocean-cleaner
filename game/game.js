@@ -69,8 +69,19 @@ function purchaseBetterUpgrades(button) {
         let baseCPS = parseFloat(OGButton.getAttribute('data-base-cps'));
         baseCPS *= 2; // Double the base CPS of the original upgrade
         OGButton.setAttribute('data-base-cps', baseCPS);
+
+        // Mark the better upgrade as purchased
+        localStorage.setItem(upgradeID, 'true');
+        button.style.display = 'none';
+
         console.log(baseCPS);
         console.log(ID);
+
+        // Save data to ensure persistence
+        saveData();
+        // Recheck visibility of upgrades and shops
+        checkUpgradeVisibility();
+        checkShopVisibility();
     } else {
         console.log(`Element with data-upgrade-id="${ID}" not found.`);
     }
@@ -116,7 +127,7 @@ upgradeButtons.forEach(button => {
 
 shopButtons.forEach(button => {
     button.addEventListener('click', () => {
-        purchaseCursor(button);
+        purchaseBetterUpgrades(button);
     });
 });
 

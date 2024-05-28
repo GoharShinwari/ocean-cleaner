@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Nunito", sans-serif;
     text-align: center;
-    background-color: #1976d2;
+    background-color: #5d9798;
     color: whitesmoke;
     font-size: 2.2vh;
     margin: 0; 
     padding: 0; 
+}
+
+* {
+    touch-action: manipulation;
 }
 
 .upgrade-button, .shop-button {
@@ -68,16 +72,23 @@ body {
 
 .shop-button,
 .upgrade-button {
-    background-color: #8B4513;
+    background-color: #c3b87c;
+    background-image: url('./sand.jpg'); 
+    background-size: cover; 
+    background-blend-mode: multiply; 
 }
 
 .shop-button:hover,
 .upgrade-button:hover {
-    background-color: #66330e; 
+    background-color: #7c764e;
+    background-image: url('./sand.jpg'); 
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
+
 #clean-button {
-    background-color: #388e3c;
+    background-color:#5a8524;
     width: 10vh;
     height: 10vh;
     border-radius: 50%;
@@ -87,7 +98,8 @@ body {
 }
 
 #clean-button:hover {
-    background-color: #2e7130; 
+    background-color: #41611b; 
+    transform: scale(1.3);
 }
 
 
