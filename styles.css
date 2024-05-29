@@ -3,14 +3,14 @@ body {
     font-family: "Poppins", sans-serif;
     text-align: center;
     background-color: #5d9798; 
-    color: black;
+    color: #111111;
 }
 
 .container {
     max-width: 600px;
     margin: 100px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.6); 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: relative; 
@@ -37,7 +37,7 @@ body {
 
 .button button {
     padding: 10px 20px;
-    background-color: #03a9f4; 
+    background-color: #5d9798; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -47,7 +47,7 @@ body {
 }
 
 .button button:hover {
-    background-color: #42688e; 
+    background-color: #3d6161; 
 }
 
 .name-submission {
@@ -70,4 +70,34 @@ body {
 .name-submission input[type="text"]::placeholder {
     color: #999;
     text-align: center;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(50, 95, 97, 0.5); /* Convert the color to RGBA and adjust alpha */
+    color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    font-family: "Poppins", sans-serif;
+    
+    
+}
+
+.bottom-bar a {
+    color: #111111;
+    text-decoration: none;
+}
+
+.bottom-bar a:hover {
+    text-decoration: underline;
+}
+
+.bottom-bar a + a {
+    margin-left: 10px;
 }
