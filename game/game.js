@@ -67,19 +67,13 @@ function purchaseBetterUpgrades(button) {
     const OGButton = document.querySelector(`[data-upgrade-id="${ID}"]`);
     if (OGButton) {
         let baseCPS = parseFloat(OGButton.getAttribute('data-base-cps'));
-        baseCPS *= 2; // Double the base CPS of the original upgrade
+        baseCPS *= 2; 
         OGButton.setAttribute('data-base-cps', baseCPS);
 
-        // Mark the better upgrade as purchased
         localStorage.setItem(upgradeID, 'true');
         button.style.display = 'none';
 
-        console.log(baseCPS);
-        console.log(ID);
-
-        // Save data to ensure persistence
         saveData();
-        // Recheck visibility of upgrades and shops
         checkUpgradeVisibility();
         checkShopVisibility();
     } else {
@@ -152,31 +146,29 @@ function startCPS() {
 }
 
 function saveData() {
-    localStorage.setItem(`${username}-cleanPoints`, cleanPoints.toFixed(2));
-    localStorage.setItem(`${username}-perSecond`, perSecond.toFixed(2));
-    localStorage.setItem(`${username}-cleanPointsPerClick`, cleanPointsPerClick.toFixed(2));
+    localStorage.setItem('cleanPoints', cleanPoints.toFixed(2));
+    localStorage.setItem('perSecond', perSecond.toFixed(2));
+    localStorage.setItem('cleanPointsPerClick', cleanPointsPerClick.toFixed(2));
 
     upgradeButtons.forEach(button => {
         const upgradeId = button.getAttribute('data-upgrade-id');
         const purchased = parseInt(button.getAttribute('data-purchased'));
-        // Use the username as part of the local storage keys
-        localStorage.setItem(`${username}-${upgradeId}`, purchased);
+        localStorage.setItem(upgradeId, purchased);
     });
 
     shopButtons.forEach(button => {
         const purchaseId = button.getAttribute('data-upgrade-id');
-        const hasBought = localStorage.getItem(`${username}-${purchaseId}`) === 'true';
-        // Use the username as part of the local storage keys
-        localStorage.setItem(`${username}-${purchaseId}`, hasBought);
+        const hasBought = localStorage.getItem(purchaseId) === 'true';
+        localStorage.setItem(purchaseId, hasBought);
     });
 }
 
-function loadData(username) {
-    console.log("Loading data for username:", username);
+function loadData() {
+    console.log("Loading data...");
 
-    cleanPoints = parseFloat(localStorage.getItem(`${username}-cleanPoints`)) || 0;
-    perSecond = parseFloat(localStorage.getItem(`${username}-perSecond`)) || 0;
-    cleanPointsPerClick = parseFloat(localStorage.getItem(`${username}-cleanPointsPerClick`)) || 1;
+    cleanPoints = parseFloat(localStorage.getItem('cleanPoints')) || 0;
+    perSecond = parseFloat(localStorage.getItem('perSecond')) || 0;
+    cleanPointsPerClick = parseFloat(localStorage.getItem('cleanPointsPerClick')) || 1;
 
     console.log("cleanPoints:", cleanPoints);
     console.log("perSecond:", perSecond);
@@ -187,7 +179,7 @@ function loadData(username) {
 
     upgradeButtons.forEach(button => {
         const upgradeId = button.getAttribute('data-upgrade-id');
-        const purchased = parseInt(localStorage.getItem(`${username}-${upgradeId}`)) || 0;
+        const purchased = parseInt(localStorage.getItem(upgradeId)) || 0;
         button.setAttribute('data-purchased', purchased);
 
         const baseCost = parseInt(button.getAttribute('data-base-cost'));
@@ -200,7 +192,7 @@ function loadData(username) {
 
     shopButtons.forEach(button => {
         const purchaseId = button.getAttribute('data-upgrade-id');
-        const hasBought = localStorage.getItem(`${username}-${purchaseId}`) === 'true';
+        const hasBought = localStorage.getItem(purchaseId) === 'true';
         if (hasBought) {
             button.style.display = 'none';
         }
@@ -212,5 +204,3 @@ function loadData(username) {
 
 loadData();
 startCPS();
-
-export { loadData };
