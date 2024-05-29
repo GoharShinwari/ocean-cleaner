@@ -3,15 +3,20 @@ function startGame() {
     const username = usernameInput.value.trim(); 
 
     if (username) {
-        const userId = generateUUID();
+        let userId = localStorage.getItem('userId');
+        if (!userId) {
+            userId = generateUUID();
+            localStorage.setItem('userId', userId);
+        }
 
-        localStorage.clear();
+        loadData();
 
-        localStorage.setItem('username', username);
-        localStorage.setItem('userId', userId);
-        localStorage.setItem('cleanPoints', '0'); 
-        localStorage.setItem('perSecond', '0'); 
-        localStorage.setItem('cleanPointsPerClick', '1'); 
+        if (!localStorage.getItem('cleanPoints')) {
+            localStorage.setItem('username', username);
+            localStorage.setItem('cleanPoints', '0'); 
+            localStorage.setItem('perSecond', '0'); 
+            localStorage.setItem('cleanPointsPerClick', '1');
+        }
 
         window.location.href = 'game.html'; 
     } else {
