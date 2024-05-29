@@ -171,8 +171,8 @@ function saveData() {
     });
 }
 
-function loadData() {
-    console.log("Loading data...");
+function loadData(username) {
+    console.log("Loading data for username:", username);
 
     cleanPoints = parseFloat(localStorage.getItem(`${username}-cleanPoints`)) || 0;
     perSecond = parseFloat(localStorage.getItem(`${username}-perSecond`)) || 0;
