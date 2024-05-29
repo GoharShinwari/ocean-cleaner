@@ -5,10 +5,13 @@ function startGame() {
     if (username) {
         const userId = generateUUID();
 
-        localStorage.setItem(`${username}-userId`, userId);
-        localStorage.setItem(`${username}-cleanPoints`, '0'); 
-        localStorage.setItem(`${username}-perSecond`, '0'); 
-        localStorage.setItem(`${username}-cleanPointsPerClick`, '1'); 
+        localStorage.clear();
+
+        localStorage.setItem('username', username);
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('cleanPoints', '0'); 
+        localStorage.setItem('perSecond', '0'); 
+        localStorage.setItem('cleanPointsPerClick', '1'); 
 
         window.location.href = 'game.html'; 
     } else {
