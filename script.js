@@ -1,3 +1,5 @@
+import { loadData } from './index.js'; 
+
 function startGame() {
     const usernameInput = document.querySelector('.name-submission input[type="text"]');
     const username = usernameInput.value.trim();

@@ -212,3 +212,5 @@ function loadData(username) {
 
 loadData();
 startCPS();
+
+export { loadData };
